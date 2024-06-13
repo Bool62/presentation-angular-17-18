@@ -1,0 +1,63 @@
+<h3>Control Flow :</h3>
+<!-- Condition -  Ng-If / @If @ Else -->
+
+<h4>Ng-If / &#64;if :</h4>
+<!--Version Angular < 17> -->
+
+<div>{{ VERSION_16 }}</div>
+<div *ngIf="logged; else anonymousUser">
+  {{ VERSION_16 }} L'utilisateur est connecté
+</div>
+<ng-template #anonymousUser
+  >{{ VERSION_16 }} L'utilisateur n'est pas connecté
+</ng-template>
+
+<br />
+
+<!--Version Angular 17 18 -->
+<div>{{ VERSION_1718 }}</div>
+@if(logged) {
+<div>{{ VERSION_1718 }} L'utililsateur est connecté</div>
+} @else {
+<div>{{ VERSION_1718 }}L'utililsateur n'est pas connecté</div>
+}
+
+<!-- Condition -  Ng-Switch / @switch -->
+<h4>Ng-Switch / &#64;switch :</h4>
+
+<!--Version Angular < 17> -->
+<div>{{ VERSION_16 }}</div>
+<div [ngSwitch]="role">
+  <div *ngSwitchCase="'admin'">{{ VERSION_16 }} Admin</div>
+  <div *ngSwitchCase="'user'">{{ VERSION_16 }} Utilisateur</div>
+  <div *ngSwitchDefault>{{ VERSION_16 }} Autre</div>
+</div>
+
+<br />
+
+<!--Version Angular 17 18 -->
+<div>{{ VERSION_1718 }}</div>
+
+@switch (role) { @case ('admin') {{{ VERSION_1718 }} Admin} @case ('user')
+{{{ VERSION_1718 }} Utilisateur} @default {{{ VERSION_1718 }} Autre } }
+
+<!-- Boucle -  Ng-For / @for -->
+<h4>Ng-for / &#64;for :</h4>
+
+<!--Version Angular < 17> -->
+<div>{{ VERSION_16 }}</div>
+<div *ngIf="data.length > 0; else empty">
+  <div *ngFor="let item of data">
+    <div>{{ VERSION_16 }} {{ item }}</div>
+  </div>
+</div>
+<ng-template #empty> {{ VERSION_16 }} Pas de données </ng-template>
+
+<br />
+<!--Version Angular 17 18 -->
+<div>{{ VERSION_1718 }}</div>
+
+@for (item of data; track item) {
+<div>{{ VERSION_1718 }} {{ item }}</div>
+} @empty {
+{{ VERSION_1718 }} Pas de données }
