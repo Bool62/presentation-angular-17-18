@@ -3,6 +3,7 @@
 Support de présentation pour les nouveautés Angular 17 / 18. 
 On y retrouve les points suivants : 
 - Control Flow 
+- Deferable View 
 
 
 
@@ -12,6 +13,7 @@ Run `npx nx serve presentation-angular-17-18` to start the development server. H
 
 ## Liste des urls : 
 {{host}}/control-flow
+{{host}}/defer-view
 
 ## Sources 
 
