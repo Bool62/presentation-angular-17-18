@@ -1,9 +1,19 @@
-@defer (on viewport) {
-    <app-child-view></app-child-view>
-  } @loading {
-    Chargement
-  } @error {
-    Erreur chargement :
-  } @placeholder {
-    <div>Placeholder</div>
-  }
+<div>Parent</div>
+<!-- Exemple 1 -->
+@defer (on hover(affichage); prefetch on hover (chargement)) {
+<app-child-view [titre]="'Fils 1'"></app-child-view>
+} @loading { Chargement } @error { Erreur chargement : } @placeholder {
+<div>Placeholder enfant 1 </div>
+}
+
+<!-- Exemple 2 -->
+@defer (when topAffichage) {
+<app-child-view [titre]="'Fils 2'"></app-child-view>
+} @loading { Chargement } @error { Erreur chargement : } @placeholder {
+<div>Placeholder enfant 2</div>
+}
+
+<div style="height: 300px; background-color: #ba005c" #chargement>
+  Chargement
+</div>
+<div #affichage>Affichage</div>

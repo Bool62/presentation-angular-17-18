@@ -6,8 +6,14 @@ import { ChildViewComponent } from '../child-view/child-view.component';
   standalone: true,
   imports: [ChildViewComponent],
   templateUrl: './defer-view.component.html',
-  styleUrl: './defer-view.component.scss'
+  styleUrl: './defer-view.component.scss',
 })
 export class DeferViewComponent {
+  topAffichage = false;
 
+  constructor() {
+    setTimeout(() => {
+      this.topAffichage = true;
+    }, 4000);
+  }
 }
