@@ -1,0 +1,16 @@
+<form>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input
+      type="email"
+      matInput
+      [formControl]="fg"
+      placeholder="Ex. pat@example.com"
+    />
+    @if (fg.hasError('email') && !fg.hasError('required')) {
+    <mat-error>L'e-mail est <strong>invalide</strong></mat-error>
+    } @if (fg.hasError('required')) {
+    <mat-error>L'e-mail est <strong>requis</strong></mat-error>
+    }
+  </mat-form-field>
+</form>
