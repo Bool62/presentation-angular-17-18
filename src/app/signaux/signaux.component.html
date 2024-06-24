@@ -1,0 +1,26 @@
+<!--Exemple 1 Signal simple -->
+<h4>Exemple 1 Signal simple</h4>
+<div>Valeur: {{tacheCompletee()}}</div>
+<button (click)="setCompletee()">X</button>
+
+<br>
+<!--Exemple 2 Signal calculé-->
+<h4>Exemple 2 Signal calculé</h4>
+<div>Nombre de tâches terminées: {{nbTachesCompletees()}}</div>
+
+
+    @for (tache of taches() ; track tache.id) {
+        <div>
+      {{ tache.description }} 
+        <button (click)="setCompleteeParTache(tache)">Terminée</button>
+    </div>
+    }
+
+<br>
+<!--Exemple 3 Effet signaux-->
+<h4>Exemple 3 Effets</h4>
+@for (log  of logs ; track log) {
+    <div>
+  {{log}}
+</div>
+}

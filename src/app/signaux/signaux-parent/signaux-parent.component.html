@@ -1,0 +1,14 @@
+<div #viewDiv>Test Signaux</div>
+<app-signaux-child
+  [inputRequis]="false"
+  (output)="onOutput($event)"
+  (outputObs)="onOutputObs($event)"
+></app-signaux-child>
+<app-signaux-child
+  [input]="'coucou'"
+  [inputRequis]="false"
+  [inputModel]="model"
+  (output)="onOutput($event)"
+  (outputObs)="onOutputObs($event)"
+  (inputModelChange)="onModelChange($event)"
+></app-signaux-child>
