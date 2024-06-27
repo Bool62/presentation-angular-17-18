@@ -1,0 +1,9 @@
+<div>
+  <p>ssr works!</p>
+  <button (click)="onHydratation()">Hydratation</button>
+</div>
+<ng-container>
+  @for (item of obs(); track $index) {
+  <div>{{item}}</div>
+  }
+</ng-container>
